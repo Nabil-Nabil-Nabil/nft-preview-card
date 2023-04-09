@@ -1,0 +1,164 @@
+:root {
+    /* Primary */
+    --Soft-blue:          hsl(215, 51%, 70%);
+    --Cyan:               hsl(178, 100%, 50%);
+
+    /* Neutral */
+    --Very-dark-blue-1:   hsl(217, 54%, 11%); /* (main BG)  */
+    --Very-dark-blue-2:   hsl(216, 50%, 16%); /* (card BG)  */
+    --Very-dark-blue-3:   hsl(215, 32%, 27%); /* (line)     */
+    --White:             hsl(0, 0%, 100%);
+}
+
+/* Global Stayle */
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    font-size: 18px;
+    color: var(--White);
+
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 3.85rem 1.5rem;
+    background-color: var(--Very-dark-blue-1);
+}
+
+/* Card Style ************************** */
+.card {
+    background-color: var(--Very-dark-blue-2);
+    padding: 1.5rem;
+    max-width: 325px;
+
+    display: grid;
+    gap: 1.4rem;
+
+    border-radius: 1.5rem;
+}
+
+/* Image Div ************************** */
+.card .img-div {
+    border-radius: 1rem;
+    overflow: hidden;
+    position: relative;
+    transition: .3s ease;
+}
+.card .img-div .view{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    visibility: hidden;
+}
+.card .image {
+    transition: .3s ease;
+}
+/* Image Hover */
+.card .img-div:hover {
+    background-color: var(--Cyan);
+    cursor: pointer;
+}
+.card .image:hover {
+    opacity: .4;
+}
+
+.card .image:hover + .view {
+    visibility: visible;
+}
+
+/* Card Content ************************** */
+/* Header */
+.card .content h1 {
+    font-size: 1.36rem;
+    font-weight: 600;
+    color: var(--White);
+}
+.card .content h1:hover {
+    color: var(--Cyan);
+    cursor: pointer;
+}
+/* Paragraph */
+.card .content p {
+    font-size: 1rem;
+    margin-top: 1rem;
+    line-height: 1.5rem;
+    font-weight: 300;
+    color: var(--Soft-blue);
+}
+
+/* Info And Profile ************************** */
+.info-profile {
+    display: grid;
+    gap: 1rem;
+}
+
+/* Info ************************** */
+.card .info {
+    display: flex;
+    justify-content: space-between;
+}
+.card .info .coin,
+.card .info .date {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+/* Info Coin Paragraph */
+.card .info .coin p {
+    color: var(--Cyan);
+    font-size: .95rem;
+    font-weight: 500;
+}
+
+/* Info Date Paragraph */
+.card .info .date p {
+    color: var(--Soft-blue);
+    font-size: .95rem;
+    font-weight: 500;
+}
+
+.card .info-profile hr {
+    border-color: var(--Very-dark-blue-2);
+}
+
+/* Profile Section ************************** */
+.card .profile {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Profile IMG Avatar */
+.card .profile img {
+    width: 2rem;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+
+/* Profile Paragraph */
+.card .profile p {
+    color: var(--Soft-blue);
+    font-size: .9rem;
+}
+.card .profile p span {
+    color: var(--White);
+    font-size: 1rem;
+    font-weight: 500;
+}
+.card .profile p span:hover {
+    color: var(--Cyan);
+    cursor: pointer;
+}
